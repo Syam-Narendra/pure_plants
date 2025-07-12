@@ -1,0 +1,90 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
+export const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    console.log("clickkkk");
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const menuItems = [
+    { label: "HOME", href: "/" },
+    { label: "ABOUT", href: "/about" },
+    { label: "PRODUCTS", href: "/products" },
+    { label: "CONTACT", href: "/contact" },
+  ];
+  return (
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 p-6 md:p-8">
+        <div className="flex justify-between items-center">
+          <motion.button
+            onClick={toggleMenu}
+            className={`p-2 hover:bg-black/5 rounded-lg transition-colors`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Menu className="w-6 h-6 text-white" />
+          </motion.button>
+          <motion.h1
+            className="text-2xl md:text-3xl font-bold tracking-wider text-white"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)" }}
+          >
+            PURE PLANTS
+          </motion.h1>
+          <div className="w-10" />
+        </div>
+      </nav>
+      <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/90 z-40 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.button
+              onClick={toggleMenu}
+              className="absolute top-6 left-6 md:top-8 md:left-8 p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <X className="w-6 h-6" />
+            </motion.button>
+
+            <motion.div
+              className="text-center space-y-8"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                >
+                  <a
+                    href={item.href}
+                    className="block text-white text-2xl md:text-3xl font-light tracking-wider hover:text-gray-300 transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
