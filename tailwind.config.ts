@@ -16,6 +16,16 @@ export default {
           "Segoe UI Symbol",
           "Noto Color Emoji",
         ],
+        helvetica: ["HelveticaNeueCyr", "sans-serif"],
+      },
+      animation: {
+        slide: "slide 12s linear infinite", // 12s duration, adjust as needed
+      },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-200%)" }, // 4 images * 50% = 200%
+        },
       },
     },
   },
