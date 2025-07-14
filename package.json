@@ -16,6 +16,7 @@
     "@remix-run/node": "^2.16.8",
     "@remix-run/react": "^2.16.8",
     "@remix-run/serve": "^2.16.8",
+    "@types/gsap": "^3.0.0",
     "@types/imagesloaded": "^4.1.7",
     "@types/react-slick": "^0.23.13",
     "framer-motion": "^12.23.3",

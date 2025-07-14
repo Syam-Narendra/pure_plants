@@ -1,5 +1,5 @@
 import GSAP from "gsap";
-import { Observer } from "gsap/Observer";
+import Observer from "gsap/Observer";
 import { useEffect } from "react";
 import "~/css/gsap-scroll-slides.css";
 
