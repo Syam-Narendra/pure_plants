@@ -1,7 +1,9 @@
+import { videoUrl } from "~/data/text.en";
+
 const VideoPage = () => (
   <main className="relative w-full h-screen">
     <video
-      src="https://video-previews.elements.envatousercontent.com/h264-video-previews/34b4f82d-339a-4c07-ba47-e8a87ded3de1/2733283.mp4"
+      src={videoUrl}
       loop
       preload="auto"
       muted={true}

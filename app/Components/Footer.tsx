@@ -1,5 +1,10 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { X, Instagram, Music, Linkedin, Youtube } from "lucide-react";
+import {
+  businessIntro,
+  businessName,
+  copyRightText,
+  FooterLinks,
+  iconsinFooter,
+} from "~/data/text.en";
 
 export default function Footer() {
   return (
@@ -9,159 +14,54 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold tracking-wider">
-                PURE PLANTS
+                {businessName}
               </h2>
             </div>
 
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <X size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Pinterest"
-              >
-                <div className="w-5 h-5 rounded-full bg-gray-400 hover:bg-white transition-colors duration-200" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="TikTok"
-              >
-                <Music size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="YouTube"
-              >
-                <Youtube size={20} />
-              </a>
+              {iconsinFooter.map((icon, index) => (
+                <a
+                  key={index}
+                  href={icon.href}
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  aria-label={icon.ariaLabel}
+                >
+                  {icon.iconComponent}
+                </a>
+              ))}
             </div>
             <div className="max-w-md">
-              <p className="text-gray-300 leading-relaxed">
-                Welcome to PURE PLANTS, your green haven. Explore a lush variety
-                of plants, elevate your garden space, and connect with nature.
-                Contact us today for quotes
-              </p>
+              <p className="text-gray-300 leading-relaxed">{businessIntro}</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-white font-semibold mb-4">Product</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Advisable
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Promotions
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {FooterLinks.map((mainLink, index) => (
+              <div key={index}>
+                <h3 key={index} className="text-white font-semibold mb-4">
+                  {mainLink.heading}
+                </h3>
 
-            <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Legal</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    404
-                  </a>
-                </li>
-              </ul>
-            </div>
+                <ul className="space-y-3">
+                  {mainLink.subLinks.map((subLink, index) => (
+                    <li key={index}>
+                      <a
+                        href={subLink.href}
+                        className="text-gray-400 hover:text-white transition-colors duration-200"
+                      >
+                        {subLink.linkName}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="text-center text-gray-500 text-sm">
-            <p>&copy; 2024 PURE PLANTS. All rights reserved.</p>
+            <p>{copyRightText}</p>
           </div>
         </div>
       </div>

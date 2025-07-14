@@ -1,21 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { businessName, menuItems } from "~/data/text.en";
 import { useState } from "react";
 
 export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    console.log("clickkkk");
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const menuItems = [
-    { label: "HOME", href: "/" },
-    { label: "ABOUT", href: "/about" },
-    { label: "PRODUCTS", href: "/products" },
-    { label: "CONTACT", href: "/contact" },
-  ];
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 p-6 md:p-8">
@@ -35,7 +29,7 @@ export const NavBar = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)" }}
           >
-            PURE PLANTS
+            {businessName}
           </motion.h1>
           <div className="w-10" />
         </div>
