@@ -1,6 +1,6 @@
 import GSAP from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollSmoother from "gsap/ScrollSmoother";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import "~/css/scroll-images.css";
 if (typeof window !== "undefined") {
