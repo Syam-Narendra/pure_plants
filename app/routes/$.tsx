@@ -4,8 +4,8 @@ import { NavBar } from "~/Components/Navbar";
 export const meta: MetaFunction = () => [{ title: "Not Found" }];
 
 const NotFound = () => (
-  <div className="relative w-screen h-screen overflow-hidden bg-black font-sans">
-    <NavBar />
+  <div className="relative w-screen h-screen overflow-x-hidden bg-black font-sans">
+    <NavBar isHome={true} />
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat"
       style={{

@@ -2,6 +2,8 @@ import { videoUrl } from "~/data/text.en";
 
 const VideoPage = () => (
   <main className="relative w-full h-screen">
+    <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+
     <video
       src={videoUrl}
       loop

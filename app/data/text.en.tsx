@@ -90,25 +90,28 @@ export const FooterLinks: FooterLinksI[] = [
   {
     heading: "Product",
     subLinks: [
-      { linkName: "Home", href: "#" },
-      { linkName: "Advisable", href: "#" },
+      { linkName: "Home", href: "/" },
+      { linkName: "All Products", href: "/products" },
       { linkName: "Promotions", href: "#" },
     ],
   },
   {
     heading: "Company",
     subLinks: [
-      { linkName: "Contact", href: "#" },
+      { linkName: "Contact", href: "/contact" },
       { linkName: "Blog", href: "#" },
       { linkName: "FAQ", href: "#" },
     ],
   },
   {
-    heading: "Legal",
+    heading: "Catalogue",
     subLinks: [
-      { linkName: "Privacy", href: "#" },
-      { linkName: "Terms", href: "#" },
-      { linkName: "404", href: "#" },
+      { linkName: "Indoor Plants", href: "#" },
+      { linkName: "Outdoor Plants", href: "#" },
+      { linkName: "Flowering Plants", href: "#" },
+      { linkName: "Pots & Planters", href: "#" },
+      { linkName: "Gardening Tools", href: "#" },
+      { linkName: "Corporate Gifting", href: "#" },
     ],
   },
 ];

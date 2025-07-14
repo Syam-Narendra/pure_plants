@@ -13,10 +13,10 @@ export const links: LinksFunction = () => [
 const Index: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-black">
-      <NavBar />
+      <NavBar isHome={true} />
       <VideoPage />
       <HomePageMainImages />
-      <BackgroundSlide/>
+      <BackgroundSlide />
       <Footer />
     </div>
   );
