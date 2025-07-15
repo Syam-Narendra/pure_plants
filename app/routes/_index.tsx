@@ -12,7 +12,7 @@ export const links: LinksFunction = () => [
 
 const Index: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="min-h-screen bg-black">
       <NavBar isHome={true} />
       <VideoPage />
       <HomePageMainImages />

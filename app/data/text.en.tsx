@@ -115,3 +115,67 @@ export const FooterLinks: FooterLinksI[] = [
     ],
   },
 ];
+
+interface AllProductsImagesI {
+  imageUrl: string;
+  plantName: string;
+  category: "Outdoor" | "Indoor" | "Flower" | "Decorative" | "Gift";
+  sizesAvailable?: string[];
+}
+
+export const plantSizes: string[] = ["20*20", "19*19", "15*16", "10*8", "5*6"];
+interface CategoryI {
+  categoryName: string;
+  availableTypes: number;
+}
+export const categories: CategoryI[] = [
+  { categoryName: "Outdoor", availableTypes: 120 },
+  { categoryName: "Indoor", availableTypes: 80 },
+  { categoryName: "Flower", availableTypes: 65 },
+  { categoryName: "Decorative", availableTypes: 50 },
+  { categoryName: "Gift", availableTypes: 95 },
+];
+
+export const AllProductsImages: AllProductsImagesI[] = [
+  {
+    imageUrl:
+      "https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Premium Plant",
+    category: "Decorative",
+    sizesAvailable: ["20*20", "19*20"],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1630278381578-392f31f110c4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Tolga",
+    category: "Decorative",
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1751677524360-978c93b2c0b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Sea Sail",
+    category: "Outdoor",
+    sizesAvailable: ["20*20", "19*20", "16*32"],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1643212482805-d2c7ff1cc661?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Sarina",
+    category: "Decorative",
+    sizesAvailable: ["20*20", "19*20"],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1685977706328-7db7f86db70d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Yellow Phile",
+    category: "Flower",
+    sizesAvailable: ["8*8", "5*5"],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1644820864412-2e08f6f7c975?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Evengeline",
+    category: "Decorative",
+    sizesAvailable: ["8*8", "10*10"],
+  },
+];

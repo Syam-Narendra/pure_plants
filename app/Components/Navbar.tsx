@@ -26,15 +26,13 @@ export const NavBar = ({ isHome }: NavBarProps) => {
     } else {
       setHasScrolled(true);
     }
-  }, []);
+  }, [isHome]);
 
   return (
-    <>
+    <div className="relative">
       <nav
-        className={`${
-          isHome ? "fixed" : "sticky"
-        } top-0 left-0 right-0 z-50 p-6 md:p-8 transition-colors duration-300 ${
-          hasScrolled ? "bg-black" : ""
+        className={`fixed top-0 left-0 right-0 z-50 p-6 md:p-8 transition-colors duration-300 ${
+          hasScrolled ? "bg-black" : "bg-black/0"
         }`}
       >
         <div className="flex justify-between items-center">
@@ -108,6 +106,6 @@ export const NavBar = ({ isHome }: NavBarProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };

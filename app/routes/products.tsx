@@ -1,13 +1,13 @@
 import Footer from "~/Components/Footer";
 import { NavBar } from "~/Components/Navbar";
-import ProductsImagesGrid from "~/Components/Products/ProductImagesGrid";
+import ProductsContainer from "~/Components/Products/ProductsContainer";
 
 const ProductsPage = () => (
-  <>
+  <div className="bg-black min-h-screen">
     <NavBar isHome={false} />
-    <ProductsImagesGrid />
+    <ProductsContainer />
     <Footer />
-  </>
+  </div>
 );
 
 export default ProductsPage;
