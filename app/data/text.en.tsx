@@ -86,6 +86,21 @@ interface FooterLinksI {
   subLinks: SubLinksI[];
 }
 
+interface CategoryI {
+  linkName: string;
+  href: string;
+  availableTypes: number;
+}
+
+export const categories: CategoryI[] = [
+  { linkName: "Indoor Plants", href: "#", availableTypes: 112 },
+  { linkName: "Outdoor Plants", href: "#", availableTypes: 90 },
+  { linkName: "Flowering Plants", href: "#", availableTypes: 30 },
+  { linkName: "Pots & Planters", href: "#", availableTypes: 20 },
+  { linkName: "Gardening Tools", href: "#", availableTypes: 12 },
+  { linkName: "Corporate Gifting", href: "#", availableTypes: 29 },
+];
+
 export const FooterLinks: FooterLinksI[] = [
   {
     heading: "Product",
@@ -105,14 +120,7 @@ export const FooterLinks: FooterLinksI[] = [
   },
   {
     heading: "Catalogue",
-    subLinks: [
-      { linkName: "Indoor Plants", href: "#" },
-      { linkName: "Outdoor Plants", href: "#" },
-      { linkName: "Flowering Plants", href: "#" },
-      { linkName: "Pots & Planters", href: "#" },
-      { linkName: "Gardening Tools", href: "#" },
-      { linkName: "Corporate Gifting", href: "#" },
-    ],
+    subLinks: categories,
   },
 ];
 
@@ -124,17 +132,7 @@ interface AllProductsImagesI {
 }
 
 export const plantSizes: string[] = ["20*20", "19*19", "15*16", "10*8", "5*6"];
-interface CategoryI {
-  categoryName: string;
-  availableTypes: number;
-}
-export const categories: CategoryI[] = [
-  { categoryName: "Outdoor", availableTypes: 120 },
-  { categoryName: "Indoor", availableTypes: 80 },
-  { categoryName: "Flower", availableTypes: 65 },
-  { categoryName: "Decorative", availableTypes: 50 },
-  { categoryName: "Gift", availableTypes: 95 },
-];
+
 
 export const AllProductsImages: AllProductsImagesI[] = [
   {

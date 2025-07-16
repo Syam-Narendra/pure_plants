@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { categories, plantSizes } from "~/data/text.en";
@@ -56,7 +57,6 @@ const FilterBox = () => {
         </div>
       </div>
 
-      {/* Availability Filter */}
       <div className="space-y-4">
         <h3
           className="text-sm font-semibold uppercase tracking-wide mb-1 flex justify-between items-center cursor-pointer"
@@ -69,7 +69,7 @@ const FilterBox = () => {
             }
           }}
         >
-          Availability
+          Categories
           <span
             className={`transform transition-transform text-sm ${
               showAvailability ? "rotate-180" : ""
@@ -91,19 +91,17 @@ const FilterBox = () => {
             >
               {categories.map((item) => (
                 <label
-                  key={item.categoryName}
+                  key={item.linkName}
                   className="flex items-center justify-between cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
-                      onChange={() =>
-                        handleAvailabilityToggle(item.categoryName)
-                      }
-                      checked={selectedAvailability.includes(item.categoryName)}
+                      onChange={() => handleAvailabilityToggle(item.linkName)}
+                      checked={selectedAvailability.includes(item.linkName)}
                       className="w-5 h-5 border border-gray-400 rounded-sm accent-white bg-black"
                     />
-                    <span className="text-sm">{item.categoryName}</span>
+                    <span className="text-sm">{item.linkName}</span>
                   </div>
                   <span className="text-sm text-blue-500 font-medium">
                     ({item.availableTypes})

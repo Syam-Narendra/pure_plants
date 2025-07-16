@@ -5,7 +5,7 @@ const ImagesGrid = () => (
     {AllProductsImages.map((item, index) => (
       <div
         key={index}
-        className="bg-gray-900 text-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[320px] mx-auto skewElem"
+        className="bg-black border-gray-900 border text-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[320px] mx-auto skewElem"
       >
         <div className="aspect-[3/4] w-full overflow-hidden">
           <img

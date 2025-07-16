@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import FilterBox from "./FilterBox";
 import ImagesGrid from "./ImagesGrid";
+import SearchBox from "./SearchBox";
 
 const ProductsContainer = () => {
-  const [search, setSearch] = useState<string>("");
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const isMobile = window.innerWidth <= 768;
@@ -51,23 +50,10 @@ const ProductsContainer = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="sticky top-[96px] z-40 bg-black shadow-md">
-        <div className="container mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold mb-2">Our Catalogue</h1>
-          <input
-            type="text"
-            placeholder="Search catalogue..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="px-4 py-2 rounded-xl border bg-gray-950 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 w-full sm:w-80"
-          />
-        </div>
-      </div>
-      <div className="h-28 sm:h-24"></div>
-
-      <div className="p-4 top-[300px] container mx-auto px-4 flex flex-col md:flex-row gap-6">
+      <div className="p-4 top-[300px] container mx-auto flex flex-col md:flex-row gap-6">
         <FilterBox />
-        <div className="flex-1">
+        <div className="flex flex-col">
+          <SearchBox />
           <ImagesGrid />
         </div>
       </div>
