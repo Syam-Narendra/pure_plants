@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
-const SearchBox = () => {
-  const [search, setSearch] = useState<string>("");
+const SearchBox = forwardRef<HTMLDivElement>((props, ref) => {
+  const [search, setSearch] = useState("");
+
   return (
-    <div className="sticky top-[96px] z-40 bg-black shadow-md">
+    <div ref={ref} className="sticky bg-black shadow-md">
       <div className="container mx-auto px-4 py-4 flex flex-col">
         <h1 className="text-2xl font-bold mb-2">Our Catalogue</h1>
         <input
@@ -16,6 +17,8 @@ const SearchBox = () => {
       </div>
     </div>
   );
-};
+});
+
+SearchBox.displayName = "SearchBox";
 
 export default SearchBox;

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { categories, plantSizes } from "~/data/text.en";
+import { categories, Size } from "~/data/text.en";
 
 const FilterBox = () => {
   const [showAvailability, setShowAvailability] = useState(true);
@@ -25,33 +25,34 @@ const FilterBox = () => {
   return (
     <div
       className={`
-        relative md:sticky md:top-36 
-        bg-black text-white border border-gray-700 rounded-lg 
-        p-4 z-30
-        w-[90%] h-fit max-w-xs mx-auto mt-6 overflow-y-auto
-      `}
+    relative md:sticky md:top-36 
+    bg-black text-white border border-gray-700 rounded-lg 
+    p-4 z-30
+    w-full sm:w-[90%] md:w-72 lg:w-80 xl:w-96 
+    max-w-full md:max-w-sm mx-auto mt-6 
+    overflow-y-auto h-fit
+  `}
     >
       <h2 className="text-xl font-semibold mb-6 text-center md:text-left">
         Filters
       </h2>
 
-      {/* Size Filter */}
       <div className="mb-6">
         <h3 className="text-sm font-semibold uppercase tracking-wide mb-2">
-          Size
+          Sizes
         </h3>
         <div className="flex flex-wrap gap-2 border-b border-gray-700 pb-4">
-          {plantSizes.map((size: string, index: number) => (
+          {Object.values(Size).map((plantSize, index) => (
             <button
               key={index}
-              onClick={() => handleSizeToggle(size)}
+              onClick={() => handleSizeToggle(plantSize)}
               className={`border p-2 text-sm font-medium transition-colors ${
-                selectedSizes.includes(size)
+                selectedSizes.includes(plantSize)
                   ? "bg-white text-black border-white"
                   : "border-white text-white"
               }`}
             >
-              {size}
+              {plantSize}
             </button>
           ))}
         </div>

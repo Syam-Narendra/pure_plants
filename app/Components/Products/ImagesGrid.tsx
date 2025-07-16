@@ -1,7 +1,13 @@
 import { AllProductsImages } from "~/data/text.en";
 
-const ImagesGrid = () => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+interface ImagesGridProps {
+  height: number;
+}
+
+const ImagesGrid = ({ height }: ImagesGridProps) => (
+  <div
+    className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 top-${height}px pt-4`}
+  >
     {AllProductsImages.map((item, index) => (
       <div
         key={index}
@@ -17,7 +23,7 @@ const ImagesGrid = () => (
         <div className="p-4 bg-black">
           <h2 className="text-lg font-bold mb-1">{item.plantName}</h2>
           <p className="text-sm mb-1">{item.category}</p>
-          {item.sizesAvailable && (
+          {item.sizesAvailable?.length !== 0 && (
             <p className="text-sm text-yellow-500">
               Sizes Available:{" "}
               {item.sizesAvailable.map((each, index) => (

@@ -86,6 +86,16 @@ interface FooterLinksI {
   subLinks: SubLinksI[];
 }
 
+export enum categoriesObj {
+  indoorPlants = "Indoor Plants",
+  outdoorPlants = "Outdoor Plants",
+  decorative = "Decorative",
+  floweringPlants = "Flowering Plants",
+  potsAndPlanters = "Pots & Planters",
+  gardeningTools = "Gardening Tools",
+  corporateGifting = "Corporate Gifting",
+}
+
 interface CategoryI {
   linkName: string;
   href: string;
@@ -93,12 +103,13 @@ interface CategoryI {
 }
 
 export const categories: CategoryI[] = [
-  { linkName: "Indoor Plants", href: "#", availableTypes: 112 },
-  { linkName: "Outdoor Plants", href: "#", availableTypes: 90 },
-  { linkName: "Flowering Plants", href: "#", availableTypes: 30 },
-  { linkName: "Pots & Planters", href: "#", availableTypes: 20 },
-  { linkName: "Gardening Tools", href: "#", availableTypes: 12 },
-  { linkName: "Corporate Gifting", href: "#", availableTypes: 29 },
+  { linkName: categoriesObj.indoorPlants, href: "#", availableTypes: 112 },
+  { linkName: categoriesObj.outdoorPlants, href: "#", availableTypes: 90 },
+  { linkName: categoriesObj.decorative, href: "#", availableTypes: 56 },
+  { linkName: categoriesObj.floweringPlants, href: "#", availableTypes: 30 },
+  { linkName: categoriesObj.potsAndPlanters, href: "#", availableTypes: 20 },
+  { linkName: categoriesObj.gardeningTools, href: "#", availableTypes: 12 },
+  { linkName: categoriesObj.corporateGifting, href: "#", availableTypes: 29 },
 ];
 
 export const FooterLinks: FooterLinksI[] = [
@@ -124,56 +135,63 @@ export const FooterLinks: FooterLinksI[] = [
   },
 ];
 
+export enum Size {
+  s20_20 = "20*20",
+  s19_19 = "19*19",
+  s15_16 = "15*16",
+  s10_8 = "10*8",
+  s5_6 = "5*6",
+  s16_16 = "16*16",
+}
+
 interface AllProductsImagesI {
   imageUrl: string;
   plantName: string;
-  category: "Outdoor" | "Indoor" | "Flower" | "Decorative" | "Gift";
-  sizesAvailable?: string[];
+  category: categoriesObj;
+  sizesAvailable: Size[];
 }
-
-export const plantSizes: string[] = ["20*20", "19*19", "15*16", "10*8", "5*6"];
-
 
 export const AllProductsImages: AllProductsImagesI[] = [
   {
     imageUrl:
       "https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Premium Plant",
-    category: "Decorative",
-    sizesAvailable: ["20*20", "19*20"],
+    category: categoriesObj.decorative,
+    sizesAvailable: [Size.s10_8, Size.s20_20],
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1630278381578-392f31f110c4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Tolga",
-    category: "Decorative",
+    category: categoriesObj.corporateGifting,
+    sizesAvailable: [],
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1751677524360-978c93b2c0b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Sea Sail",
-    category: "Outdoor",
-    sizesAvailable: ["20*20", "19*20", "16*32"],
+    category: categoriesObj.floweringPlants,
+    sizesAvailable: [Size.s10_8, Size.s19_19],
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1643212482805-d2c7ff1cc661?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Sarina",
-    category: "Decorative",
-    sizesAvailable: ["20*20", "19*20"],
+    category: categoriesObj.gardeningTools,
+    sizesAvailable: [Size.s15_16, Size.s10_8],
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1685977706328-7db7f86db70d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Yellow Phile",
-    category: "Flower",
-    sizesAvailable: ["8*8", "5*5"],
+    category: categoriesObj.floweringPlants,
+    sizesAvailable: [Size.s19_19, Size.s5_6],
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1644820864412-2e08f6f7c975?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Evengeline",
-    category: "Decorative",
-    sizesAvailable: ["8*8", "10*10"],
+    category: categoriesObj.indoorPlants,
+    sizesAvailable: [Size.s15_16, Size.s20_20],
   },
 ];

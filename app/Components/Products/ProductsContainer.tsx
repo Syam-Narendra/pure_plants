@@ -1,11 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import FilterBox from "./FilterBox";
 import ImagesGrid from "./ImagesGrid";
 import SearchBox from "./SearchBox";
 
 const ProductsContainer = () => {
+  const [searchBoxHeight, setSearchBoxHeight] = useState(0);
+  const searchBoxRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
+      if (searchBoxRef.current) {
+        setSearchBoxHeight(searchBoxRef.current.offsetHeight);
+      }
       const isMobile = window.innerWidth <= 768;
       if (isMobile) return;
 
@@ -50,11 +56,18 @@ const ProductsContainer = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="p-4 top-[300px] container mx-auto flex flex-col md:flex-row gap-6">
-        <FilterBox />
-        <div className="flex flex-col">
-          <SearchBox />
-          <ImagesGrid />
+      <div className="p-4 container mx-auto flex flex-col md:flex-row gap-6">
+        <div className="hidden md:block">
+          <FilterBox />
+        </div>
+
+        <div className="flex flex-col mt-20 w-full">
+          <SearchBox ref={searchBoxRef} />
+          <div className="block md:hidden mt-4">
+            <FilterBox />
+          </div>
+
+          <ImagesGrid height={searchBoxHeight} />
         </div>
       </div>
     </div>
