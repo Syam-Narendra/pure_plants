@@ -1,9 +1,9 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import BackgroundSlide from "~/Components/BackgroundSlide";
-import Footer from "~/Components/Footer";
-import HomePageMainImages from "~/Components/HomePageMainImages";
-import { NavBar } from "~/Components/Navbar";
-import VideoPage from "~/Components/VideoHomePage";
+import BackgroundSlide from "~/components/BackgroundSlide";
+import Footer from "~/components/Footer";
+import HomePageMainImages from "~/components/HomePageMainImages";
+import { NavBar } from "~/components/Navbar";
+import VideoPage from "~/components/VideoHomePage";
 export const meta: MetaFunction = () => [{ title: "Pure Plants" }];
 
 export const links: LinksFunction = () => [

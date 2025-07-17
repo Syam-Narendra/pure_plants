@@ -1,25 +1,46 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
+import { useLocation, useNavigate } from "@remix-run/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { categories, Size } from "~/data/text.en";
 
 const FilterBox = () => {
   const [showAvailability, setShowAvailability] = useState(true);
-  const [selectedAvailability, setSelectedAvailability] = useState<string[]>(
-    []
-  );
+  const [selectedCategories, setselectedCategories] = useState<string[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSizeToggle = (size: string) => {
-    setSelectedSizes((prev) =>
-      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]
-    );
+    setSelectedSizes((prev) => {
+      const newSizes = prev.includes(size)
+        ? prev.filter((s) => s !== size)
+        : [...prev, size];
+
+      const searchParams = new URLSearchParams(location.search);
+      searchParams.set("sizes", newSizes.join(","));
+      navigate(`/products?${searchParams.toString()}`, {
+        replace: true,
+      });
+
+      return newSizes;
+    });
   };
 
-  const handleAvailabilityToggle = (label: string) => {
-    setSelectedAvailability((prev) =>
-      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label]
-    );
+  const handleCategoryToggle = (label: string) => {
+    setselectedCategories((prev) => {
+      const newCategories = prev.includes(label)
+        ? prev.filter((l) => l !== label)
+        : [...prev, label];
+
+      const searchParams = new URLSearchParams(location.search);
+      searchParams.set("cat", newCategories.join(","));
+      navigate(`/products?${searchParams.toString()}`, {
+        replace: true,
+      });
+
+      return newCategories;
+    });
   };
 
   return (
@@ -98,8 +119,8 @@ const FilterBox = () => {
                   <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
-                      onChange={() => handleAvailabilityToggle(item.linkName)}
-                      checked={selectedAvailability.includes(item.linkName)}
+                      onChange={() => handleCategoryToggle(item.linkName)}
+                      checked={selectedCategories.includes(item.linkName)}
                       className="w-5 h-5 border border-gray-400 rounded-sm accent-white bg-black"
                     />
                     <span className="text-sm">{item.linkName}</span>

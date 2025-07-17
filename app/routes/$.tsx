@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { NavBar } from "~/Components/Navbar";
+import { NavBar } from "~/components/Navbar";
 
 export const meta: MetaFunction = () => [{ title: "Not Found" }];
 
