@@ -9,14 +9,14 @@ function ScrollVelocityBg() {
       <div className="flex flex-col space-y-5 py-10">
         {velocity.map((v, index) => (
           <ScrollVelocity key={index} velocity={v}>
-            {backGroundSlideImages.map(({ title, thumbnail }) => (
+            {backGroundSlideImages.map((src, index) => (
               <div
-                key={title}
+                key={index}
                 className="relative h-[6rem] w-[9rem] md:h-[8rem] md:w-[12rem] xl:h-[12rem] xl:w-[18rem]"
               >
                 <img
-                  src={thumbnail}
-                  alt={title}
+                  src={src}
+                  alt={index}
                   
                   className="h-full w-full object-cover object-center"
                 />
@@ -24,7 +24,7 @@ function ScrollVelocityBg() {
             ))}
           </ScrollVelocity>
         ))}
-        <ScrollVelocity velocity={5}>You can also use a text!</ScrollVelocity>
+        
       </div>
     </div>
   )
