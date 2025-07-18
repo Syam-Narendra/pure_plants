@@ -1,9 +1,9 @@
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { LoaderFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import ImagesGrid from "~/components/Products/ImagesGrid";
 import { AllProductsImages, Size } from "~/data/text.en";
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
+export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
 
   const sizeParams =
@@ -15,7 +15,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return AllProductsImages;
   }
 
-  const catFiltProducts = AllProductsImages.filter((product) => {
+  const filteredProducts = AllProductsImages.filter((product) => {
     const categoryMatched =
       catParams.length === 0 || catParams.includes(product.category);
 
@@ -26,7 +26,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return categoryMatched && sizeMatched;
   });
 
-  return catFiltProducts;
+  return filteredProducts;
 };
 
 const Product = () => {

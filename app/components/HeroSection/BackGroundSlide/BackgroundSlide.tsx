@@ -1,13 +1,6 @@
-import { useDynamicImport } from "~/hooks/DynamicImport";
-import { MarqueeProps } from "react-fast-marquee";
-import { backGroundSlideImages, services } from "~/data/text.en";
+import { services } from "~/data/text.en";
+import { ScrollVelocityBg } from "./VerticalScroll";
 export default function BackgroundSlide() {
-  const Marquee = useDynamicImport<React.ComponentType<MarqueeProps>>(
-    () => import("react-fast-marquee")
-  );
-
-  if (!Marquee) return null;
-
   return (
     <div className="relative w-full h-[50vh] min-h-[300px] bg-black text-white flex items-center justify-center perspective-[1000px] ">
       <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none" />
@@ -28,17 +21,7 @@ export default function BackgroundSlide() {
       </div>
 
       <div className="absolute inset-0 z-0">
-        <Marquee speed={80} gradient={false} className="h-full">
-          {backGroundSlideImages.map((src, index) => (
-            <div
-              key={index}
-              className="w-[80vw] h-[45vw] sm:w-[40vw] sm:h-[22.5vw] md:w-[30vw] md:h-[16.875vw] mx-6 sm:mx-12 flex-none bg-cover bg-center transform [transform-style:preserve-3d]"
-              style={{
-                backgroundImage: `url(${src})`,
-              }}
-            />
-          ))}
-        </Marquee>
+        <ScrollVelocityBg />
       </div>
     </div>
   );

@@ -76,6 +76,8 @@ export const iconsinFooter: iconsinFooterI[] = [
 
 export const businessIntro: string = `Welcome to ${businessName}, your green haven. Explore a lush variety of plants, elevate your garden space, and connect with nature. Contact us today for quotes`;
 export const copyRightText: string = `© 2024 ${businessName}. All rights reserved`;
+export const heroStickyCardHeading: string = `Discover vibrant greenery`;
+export const heroStickyCardText: string = `curated with care to bring life, peace, and style to your home and garden`;
 
 interface SubLinksI {
   linkName: string;
@@ -91,7 +93,7 @@ export enum categoriesObj {
   outdoorPlants = "Outdoor Plants",
   decorative = "Decorative",
   floweringPlants = "Flowering Plants",
-  potsAndPlanters = "Pots & Planters",
+  potsAndPlanters = "Pots and Planters",
   gardeningTools = "Gardening Tools",
   corporateGifting = "Corporate Gifting",
 }
@@ -103,13 +105,41 @@ interface CategoryI {
 }
 
 export const categories: CategoryI[] = [
-  { linkName: categoriesObj.indoorPlants, href: "#", availableTypes: 112 },
-  { linkName: categoriesObj.outdoorPlants, href: "#", availableTypes: 90 },
-  { linkName: categoriesObj.decorative, href: "#", availableTypes: 56 },
-  { linkName: categoriesObj.floweringPlants, href: "#", availableTypes: 30 },
-  { linkName: categoriesObj.potsAndPlanters, href: "#", availableTypes: 20 },
-  { linkName: categoriesObj.gardeningTools, href: "#", availableTypes: 12 },
-  { linkName: categoriesObj.corporateGifting, href: "#", availableTypes: 29 },
+  {
+    linkName: categoriesObj.indoorPlants,
+    href: `/products?cat=${categoriesObj.indoorPlants}`,
+    availableTypes: 112,
+  },
+  {
+    linkName: categoriesObj.outdoorPlants,
+    href: `/products?cat=${categoriesObj.outdoorPlants}`,
+    availableTypes: 90,
+  },
+  {
+    linkName: categoriesObj.decorative,
+    href: `/products?cat=${categoriesObj.decorative}`,
+    availableTypes: 56,
+  },
+  {
+    linkName: categoriesObj.floweringPlants,
+    href: `/products?cat=${categoriesObj.floweringPlants}`,
+    availableTypes: 30,
+  },
+  {
+    linkName: categoriesObj.potsAndPlanters,
+    href: `/products?cat=${categoriesObj.potsAndPlanters}`,
+    availableTypes: 20,
+  },
+  {
+    linkName: categoriesObj.gardeningTools,
+    href: `/products?cat=${categoriesObj.gardeningTools}`,
+    availableTypes: 12,
+  },
+  {
+    linkName: categoriesObj.corporateGifting,
+    href: `/products?cat=${categoriesObj.corporateGifting}`,
+    availableTypes: 29,
+  },
 ];
 
 export const FooterLinks: FooterLinksI[] = [
@@ -156,7 +186,7 @@ export const AllProductsImages: AllProductsImagesI[] = [
     imageUrl:
       "https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     plantName: "Premium Plant",
-    category: categoriesObj.decorative,
+    category: categoriesObj.potsAndPlanters,
     sizesAvailable: [Size.s10_8, Size.s20_20],
   },
   {

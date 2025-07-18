@@ -1,15 +1,22 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
-import { useLocation, useNavigate } from "@remix-run/react";
+import { useLocation, useNavigate, useSearchParams } from "@remix-run/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { categories, Size } from "~/data/text.en";
 
 const FilterBox = () => {
   const [showAvailability, setShowAvailability] = useState(true);
-  const [selectedCategories, setselectedCategories] = useState<string[]>([]);
-  const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const sizeParams =
+    searchParams.get("sizes")?.split(",").filter(Boolean) ?? [];
+  const catParams = searchParams.get("cat")?.split(",").filter(Boolean) ?? [];
+  const [selectedCategories, setselectedCategories] =
+    useState<string[]>(catParams);
+  const [selectedSizes, setSelectedSizes] = useState<string[]>(sizeParams);
+  console.log("search params in filter box", sizeParams, catParams);
 
   const handleSizeToggle = (size: string) => {
     setSelectedSizes((prev) => {
