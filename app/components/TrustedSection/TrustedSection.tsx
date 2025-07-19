@@ -6,8 +6,8 @@ const TrustedSection = () => {
     <div className=" w-full overflow-hidden bg-black h-fit">
       <div className="mx-auto mt-32 w-full">
         <div className="text-center text-3xl text-foreground">
-          <span className=" text-indigo-200">Trusted by experts.{"  "}</span>
-          <span className="text-indigo-200">Used by the leaders.</span>
+          <span className=" text-indigo-200">Nurtured by nature.{"  "}</span>
+          <span className="text-indigo-200">Loved by aesthetes.</span>
         </div>
         <HeroSection />
       </div>
