@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { businessName, menuItems } from "~/data/text.en";
 import { useEffect, useState } from "react";
+import { businessName, menuItems } from "~/data/text.en";
 
 interface NavBarProps {
   isHome: boolean;

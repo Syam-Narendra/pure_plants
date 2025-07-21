@@ -1,6 +1,15 @@
 import { Instagram, Linkedin, Music, X, Youtube } from "lucide-react";
+import { JSX } from "react";
 
 export const backGroundSlideImages: string[] = [
+  "/404-image.png",
+  "https://plus.unsplash.com/premium_photo-1664193516160-27a3fa05901e?q=80&w=1210&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1677530604826-badbdca29b3a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "/404-image.png",
+  "https://plus.unsplash.com/premium_photo-1664193516160-27a3fa05901e?q=80&w=1210&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1677530604826-badbdca29b3a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "/404-image.png",
   "https://plus.unsplash.com/premium_photo-1664193516160-27a3fa05901e?q=80&w=1210&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -15,12 +24,12 @@ export const services: string[] = [
 ];
 
 export const homePageImages: string[] = [
-  "/plants/1.webp",
-  "/plants/2.jpeg",
-  "/plants/3.jpg",
-  "/plants/1.webp",
-  "/plants/2.jpeg",
-  "/plants/3.jpg",
+  "/homePageImages/1.webp",
+  "/homePageImages/2.jpeg",
+  "/homePageImages/3.jpg",
+  "/homePageImages/1.webp",
+  "/homePageImages/2.jpeg",
+  "/homePageImages/3.jpg",
 ];
 export const heading: string = "NATURE’S COLLECTION";
 export const tagLine: string = "A Curated Selection of Lush, Living Plants";
@@ -45,6 +54,145 @@ interface iconsinFooterI {
   ariaLabel: string;
   iconComponent: JSX.Element;
 }
+interface verticalScrollImagesI {
+  className: string;
+  images: {
+    src: string;
+    alt: string;
+    imgClassName: string;
+  }[];
+}
+export const verticalScrollImages: verticalScrollImagesI[] = [
+  {
+    className: "grid gap-2 col-span-4",
+    images: [
+      {
+        src: "https://images.unsplash.com/photo-1718838541476-d04e71caa347?w=500&auto=format&fit=crop",
+        alt: "Sunlight through dense forest canopy",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1715432362539-6ab2ab480db2?w=500&auto=format&fit=crop",
+        alt: "Blooming lavender field at sunset",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=500&auto=format&fit=crop",
+        alt: "Lush green tropical leaves close-up",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=500&auto=format&fit=crop",
+        alt: "Misty mountain valley covered with pine trees",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1719411182379-ffd97c1f7ebf?w=500&auto=format&fit=crop",
+        alt: "Wildflowers blooming on a hillside",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+    ],
+  },
+  {
+    className:
+      "sticky top-0 h-screen w-full col-span-4 gap-2  grid grid-rows-3",
+    images: [
+      {
+        src: "https://images.unsplash.com/photo-1718969604981-de826f44ce15?w=500&auto=format&fit=crop",
+        alt: "Dew on green foliage in morning light",
+        imgClassName:
+          "transition-all duration-300 w-full h-full align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1476180814856-a36609db0493?w=500&auto=format&fit=crop",
+        alt: "Path through dense forest trees",
+        imgClassName:
+          "transition-all duration-300 w-full h-full align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1595407660626-db35dcd16609?w=500&auto=format&fit=crop",
+        alt: "Close-up of succulent plant leaves",
+        imgClassName:
+          "transition-all duration-300 w-full h-full align-bottom object-cover rounded-md",
+      },
+    ],
+  },
+  {
+    className: "grid gap-2 col-span-4",
+    images: [
+      {
+        src: "https://images.unsplash.com/photo-1719547907790-f661a88302c2?w=500&auto=format&fit=crop",
+        alt: "Vibrant tropical plant with red-tinted leaves",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1599054799131-4b09c73a63cf?w=500&auto=format&fit=crop",
+        alt: "Potted plants arranged in a greenhouse",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1719963532023-01b573d1d584?w=500&auto=format&fit=crop",
+        alt: "Fresh green leaves with sunlight peeking through",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1714328101501-3594de6cb80f?w=500&auto=format&fit=crop",
+        alt: "Landscape view of a serene garden with trimmed shrubs",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1719554873571-0fd6bf322bb1?w=500&auto=format&fit=crop",
+        alt: "Young saplings growing in nursery rows",
+        imgClassName:
+          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
+      },
+    ],
+  },
+];
+
+export const companyScrollLogos: { src: string; alt: string }[] = [
+  {
+    src: "https://html.tailus.io/blocks/customers/nvidia.svg",
+    alt: "Nvidia Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/column.svg",
+    alt: "Column Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/github.svg",
+    alt: "GitHub Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/nike.svg",
+    alt: "Nike Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/lemonsqueezy.svg",
+    alt: "Lemon Squeezy Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/laravel.svg",
+    alt: "Laravel Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/lilly.svg",
+    alt: "Lilly Logo",
+  },
+  {
+    src: "https://html.tailus.io/blocks/customers/openai.svg",
+    alt: "OpenAI Logo",
+  },
+];
 
 export const iconsinFooter: iconsinFooterI[] = [
   {

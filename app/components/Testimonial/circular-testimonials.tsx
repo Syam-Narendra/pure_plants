@@ -300,13 +300,6 @@ export const CircularTestimonials = ({
           flex-direction: column;
           justify-content: space-between;
         }
-        .name {
-          font-weight: bold;
-          margin-bottom: 0.25rem;
-        }
-        .designation {
-          margin-bottom: 2rem;
-        }
         .quote {
           line-height: 1.75;
         }

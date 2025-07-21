@@ -16,7 +16,7 @@ function ScrollVelocityBg() {
               >
                 <img
                   src={src}
-                  alt={index}
+                  alt={index.toString()}
                   
                   className="h-full w-full object-cover object-center"
                 />

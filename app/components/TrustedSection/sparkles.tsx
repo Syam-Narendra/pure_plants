@@ -1,7 +1,21 @@
-/* eslint-disable react/prop-types */
 import { Particles, initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useId, useState } from "react";
+
+interface SparklesProps {
+  className: string;
+  size?: number;
+  minSize?: number | null;
+  density: number;
+  speed?: number;
+  minSpeed?: number | null;
+  opacity?: number;
+  opacitySpeed?: number;
+  minOpacity?: number | null;
+  color?: string;
+  background?: string;
+  options?: any;
+}
 
 export function Sparkles({
   className,
@@ -16,7 +30,7 @@ export function Sparkles({
   color = "#FFFFFF",
   background = "transparent",
   options = {},
-}) {
+}: SparklesProps) {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {

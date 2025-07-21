@@ -1,11 +1,11 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import BackgroundSlide from "~/components/HeroSection/BackGroundSlide/BackgroundSlide";
 import Footer from "~/components/Footer";
+import BackgroundSlide from "~/components/HeroSection/BackGroundSlide/BackgroundSlide";
 import HomePageMainImages from "~/components/HeroSection/HomePageMainImages";
-import { NavBar } from "~/components/Navbar";
+import VerticalScroll from "~/components/HeroSection/StickyScroll";
+import TrendingProducts from "~/components/HeroSection/TrendingProducts";
 import VideoPage from "~/components/HeroSection/VideoHomePage";
-import StickyScroll from "~/components/HeroSection/StickyScroll";
-import { CircularTestimonialsDemo } from "~/components/Testimonial/TestimonialCards";
+import { NavBar } from "~/components/Navbar";
 import TrustedSection from "~/components/TrustedSection/TrustedSection";
 
 export const meta: MetaFunction = () => [{ title: "Pure Plants" }];
@@ -21,9 +21,10 @@ const Index: React.FC = () => {
       <VideoPage />
       <HomePageMainImages />
       <BackgroundSlide />
-      <StickyScroll/>
-      <CircularTestimonialsDemo/>
-      <TrustedSection/>
+      <VerticalScroll />
+      <TrendingProducts />
+      {/* <CircularTestimonialsDemo /> */}
+      <TrustedSection />
       <Footer />
     </div>
   );

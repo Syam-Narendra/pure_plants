@@ -1,15 +1,16 @@
-import { HeroSection } from "./Scroll";
+import { CompainesSlider } from "./Compaines-Slider";
 import { Sparkles } from "./sparkles";
 
 const TrustedSection = () => {
   return (
-    <div className=" w-full overflow-hidden bg-black h-fit">
+    <div className=" w-full overflow-hidden bg-black h-fit p-2">
       <div className="mx-auto mt-32 w-full">
         <div className="text-center text-3xl text-foreground">
           <span className=" text-indigo-200">Nurtured by nature.{"  "}</span>
-          <span className="text-indigo-200">Loved by aesthetes.</span>
+          <span className="text-indigo-200">Loved by aesthetes.{" "} </span>
+          <span className="text-indigo-200">Luxury in Every Leaf</span>
         </div>
-        <HeroSection />
+        <CompainesSlider />
       </div>
 
       <div className="relative -mt-32 h-96 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">

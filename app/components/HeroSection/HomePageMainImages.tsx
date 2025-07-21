@@ -18,7 +18,7 @@ export default function HomePageMainImages() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="bg-black">
       <div className="mx-auto">
         <div className="flex justify-center overflow-hidden p-8">
           <div
