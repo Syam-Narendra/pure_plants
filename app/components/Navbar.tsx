@@ -52,7 +52,7 @@ export const NavBar = ({ isHome }: NavBarProps) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 z-[9999]" />
             </motion.button>
           )}
 
