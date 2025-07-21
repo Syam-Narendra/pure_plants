@@ -48,7 +48,7 @@ export const NavBar = ({ isHome }: NavBarProps) => {
           ) : (
             <motion.button
               onClick={toggleMenu}
-              className={`p-2 hover:bg-black/5 rounded-lg transition-colors`}
+              className={`p-2 hover:bg-black/5 rounded-lg transition-colors z-[9999]`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
