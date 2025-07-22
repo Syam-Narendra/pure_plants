@@ -1,8 +1,8 @@
 import { NavLink } from "@remix-run/react";
 import { ChevronRight } from "lucide-react";
 import { AllProductsImages } from "~/data/text.en";
-import ImagesGrid from "../Products/ImagesGrid";
 import { useEffect, useState } from "react";
+import ProductsFound from "../Products/FoundProducts";
 
 export default function TrendingProducts() {
   const [visibleCount, setVisibleCount] = useState<number>(6);
@@ -35,7 +35,7 @@ export default function TrendingProducts() {
           </NavLink>
         </div>
 
-        <ImagesGrid products={AllProductsImages.slice(0,visibleCount)} />
+        <ProductsFound products={AllProductsImages.slice(0, visibleCount)} />
       </div>
     </section>
   );

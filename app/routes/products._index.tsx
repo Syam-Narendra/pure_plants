@@ -1,6 +1,7 @@
 import { LoaderFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import ImagesGrid from "~/components/Products/ImagesGrid";
+import ProductsFound from "~/components/Products/FoundProducts";
+import ProductsNotFound from "~/components/Products/ProductNotFound";
 import { AllProductsImages, Size } from "~/data/text.en";
 
 export const loader: LoaderFunction = async ({
@@ -36,9 +37,12 @@ export const loader: LoaderFunction = async ({
 };
 
 const Product = () => {
-  const filteredProducts = useLoaderData<typeof loader>();
+  const filteredProducts = useLoaderData<
+    typeof loader
+  >() as typeof AllProductsImages;
+  if (filteredProducts.length === 0) return <ProductsNotFound />;
 
-  return <ImagesGrid products={filteredProducts} />;
+  return <ProductsFound products={filteredProducts} />;
 };
 
 export default Product;
