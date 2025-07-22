@@ -372,4 +372,88 @@ export const AllProductsImages: AllProductsImagesI[] = [
     category: categoriesObj.indoorPlants,
     sizesAvailable: [Size.s15_16, Size.s20_20],
   },
+  {
+    imageUrl:
+      "https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Premium Plant",
+    category: categoriesObj.potsAndPlanters,
+    sizesAvailable: [Size.s10_8, Size.s20_20],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1630278381578-392f31f110c4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Tolga",
+    category: categoriesObj.corporateGifting,
+    sizesAvailable: [],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1751677524360-978c93b2c0b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Sea Sail",
+    category: categoriesObj.floweringPlants,
+    sizesAvailable: [Size.s10_8, Size.s19_19],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1643212482805-d2c7ff1cc661?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Sarina",
+    category: categoriesObj.gardeningTools,
+    sizesAvailable: [Size.s15_16, Size.s10_8],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1685977706328-7db7f86db70d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Yellow Phile",
+    category: categoriesObj.floweringPlants,
+    sizesAvailable: [Size.s19_19, Size.s5_6],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1644820864412-2e08f6f7c975?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Evengeline",
+    category: categoriesObj.indoorPlants,
+    sizesAvailable: [Size.s15_16, Size.s20_20],
+  },
+  {
+    imageUrl:
+      "https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Premium Plant",
+    category: categoriesObj.potsAndPlanters,
+    sizesAvailable: [Size.s10_8, Size.s20_20],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1630278381578-392f31f110c4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Tolga",
+    category: categoriesObj.corporateGifting,
+    sizesAvailable: [],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1751677524360-978c93b2c0b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Sea Sail",
+    category: categoriesObj.floweringPlants,
+    sizesAvailable: [Size.s10_8, Size.s19_19],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1643212482805-d2c7ff1cc661?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Sarina",
+    category: categoriesObj.gardeningTools,
+    sizesAvailable: [Size.s15_16, Size.s10_8],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1685977706328-7db7f86db70d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Yellow Phile",
+    category: categoriesObj.floweringPlants,
+    sizesAvailable: [Size.s19_19, Size.s5_6],
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1644820864412-2e08f6f7c975?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    plantName: "Evengeline",
+    category: categoriesObj.indoorPlants,
+    sizesAvailable: [Size.s15_16, Size.s20_20],
+  },
 ];

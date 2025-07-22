@@ -3,61 +3,66 @@ import { AllProductsImages } from "~/data/text.en";
 
 const ImagesGrid = ({ products }: { products: typeof AllProductsImages }) => {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const isMobile = window.innerWidth <= 768;
-      if (isMobile) return;
+    if (products?.length > 0) {
+      if (typeof window !== "undefined") {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) return;
 
-      (async () => {
-        try {
-          const GSAP = (await import("gsap")).default;
-          const ScrollTrigger = (await import("gsap/ScrollTrigger")).default;
+        (async () => {
+          try {
+            const GSAP = (await import("gsap")).default;
+            const ScrollTrigger = (await import("gsap/ScrollTrigger")).default;
 
-          GSAP.registerPlugin(ScrollTrigger);
+            GSAP.registerPlugin(ScrollTrigger);
 
-          const proxy = { skew: 0 };
-          const skewSetter = GSAP.quickSetter(".skewElem", "skewY", "deg");
-          const clamp = GSAP.utils.clamp(-20, 20);
+            const proxy = { skew: 0 };
+            const skewSetter = GSAP.quickSetter(".skewElem", "skewY", "deg");
+            const clamp = GSAP.utils.clamp(-20, 20);
 
-          ScrollTrigger.create({
-            onUpdate: (self) => {
-              const skew = clamp(self.getVelocity() / -200);
-              if (Math.abs(skew) > Math.abs(proxy.skew)) {
-                proxy.skew = skew;
-                GSAP.to(proxy, {
-                  skew: 0,
-                  duration: 0.8,
-                  ease: "power3",
-                  overwrite: true,
-                  onUpdate: () => skewSetter(proxy.skew),
-                });
-              }
-            },
-            refreshPriority: 1,
-          });
+            ScrollTrigger.create({
+              onUpdate: (self) => {
+                const skew = clamp(self.getVelocity() / -200);
+                if (Math.abs(skew) > Math.abs(proxy.skew)) {
+                  proxy.skew = skew;
+                  GSAP.to(proxy, {
+                    skew: 0,
+                    duration: 0.8,
+                    ease: "power3",
+                    overwrite: true,
+                    onUpdate: () => skewSetter(proxy.skew),
+                  });
+                }
+              },
+              refreshPriority: 1,
+            });
 
-          GSAP.set(".skewElem", {
-            transformOrigin: "right center",
-            force3D: true,
-          });
-        } catch (error) {
-          console.error("GSAP failed to load:", error);
-        }
-      })();
+            GSAP.set(".skewElem", {
+              transformOrigin: "right center",
+              force3D: true,
+            });
+          } catch (error) {
+            console.error("GSAP failed to load:", error);
+          }
+        })();
+      }
     }
-  }, []);
+  }, [products]);
+  if (products.length === 0) {
+    return <div className="bg-red-500 h-svh">404</div>;
+  }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-4 bg-green-600">
       {products.map((item, index) => (
         <div
           key={index}
-          className="bg-black text-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 skewElem"
+          className="bg-[#191919] text-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 skewElem"
         >
           <div className="relative aspect-[4/5]">
             <img
               src={item.imageUrl}
               alt={item.plantName}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-md"
             />
           </div>
           <div className="p-4 space-y-2">

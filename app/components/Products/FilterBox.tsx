@@ -16,7 +16,6 @@ const FilterBox = () => {
   const [selectedCategories, setselectedCategories] =
     useState<string[]>(catParams);
   const [selectedSizes, setSelectedSizes] = useState<string[]>(sizeParams);
-  console.log("search params in filter box", sizeParams, catParams);
 
   const handleSizeToggle = (size: string) => {
     setSelectedSizes((prev) => {

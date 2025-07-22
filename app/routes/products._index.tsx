@@ -3,15 +3,18 @@ import { useLoaderData } from "@remix-run/react";
 import ImagesGrid from "~/components/Products/ImagesGrid";
 import { AllProductsImages, Size } from "~/data/text.en";
 
-export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
+export const loader: LoaderFunction = async ({
+  request,
+}: LoaderFunctionArgs) => {
   const url = new URL(request.url);
 
   const sizeParams =
     url.searchParams.get("sizes")?.split(",").filter(Boolean) ?? [];
   const catParams =
     url.searchParams.get("cat")?.split(",").filter(Boolean) ?? [];
+  const queryParams = url.searchParams.get("query");
 
-  if (sizeParams.length === 0 && catParams.length === 0) {
+  if (sizeParams.length === 0 && catParams.length === 0 && !queryParams) {
     return AllProductsImages;
   }
 
@@ -22,8 +25,11 @@ export const loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) =>
     const sizeMatched =
       sizeParams.length === 0 ||
       sizeParams.some((size) => product.sizesAvailable.includes(size as Size));
+    const queryMatched = product.plantName
+      .toLocaleLowerCase()
+      .includes(queryParams as string);
 
-    return categoryMatched && sizeMatched;
+    return categoryMatched && sizeMatched && queryMatched;
   });
 
   return filteredProducts;
