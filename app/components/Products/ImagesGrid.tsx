@@ -45,25 +45,26 @@ const ImagesGrid = ({ products }: { products: typeof AllProductsImages }) => {
       })();
     }
   }, []);
+
   return (
-    <div
-      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4`}
-    >
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
       {products.map((item, index) => (
         <div
           key={index}
-          className="bg-black border-gray-900 border text-white rounded-2xl shadow-lg overflow-hidden w-full max-w-[320px] mx-auto skewElem"
+          className="bg-black text-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 skewElem"
         >
-          <div className="aspect-[3/4] w-full overflow-hidden">
+          <div className="relative aspect-[4/5]">
             <img
               src={item.imageUrl}
               alt={item.plantName}
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="p-4 bg-black">
-            <h2 className="text-lg font-bold mb-1">{item.plantName}</h2>
-            <p className="text-sm mb-1">{item.category}</p>
+          <div className="p-4 space-y-2">
+            <h2 className="font-semibold text-sm sm:text-base lg:text-lg leading-tight">
+              {item.plantName}
+            </h2>
+            <p className="text-xs sm:text-sm">{item.category}</p>
             {item.sizesAvailable?.length !== 0 && (
               <p className="text-sm text-yellow-500">
                 Sizes Available:{" "}
@@ -80,4 +81,5 @@ const ImagesGrid = ({ products }: { products: typeof AllProductsImages }) => {
     </div>
   );
 };
+
 export default ImagesGrid;

@@ -46,14 +46,9 @@ export const NavBar = ({ isHome }: NavBarProps) => {
               <Menu className="w-6 h-6 text-white" />
             </motion.button>
           ) : (
-            <motion.button
-              onClick={toggleMenu}
-              className={`p-2 hover:bg-black/5 rounded-lg transition-colors z-[9999]`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <X className="w-6 h-6 z-[9999]" />
-            </motion.button>
+            <div className={`p-2 invisible`}>
+              <div className="w-6 h-6" />
+            </div>
           )}
 
           <motion.a
@@ -74,12 +69,22 @@ export const NavBar = ({ isHome }: NavBarProps) => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-black/90 z-40 flex items-center justify-center"
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* X button inside the overlay */}
+            <motion.button
+              onClick={toggleMenu}
+              className="absolute top-6 left-6 z-50 p-2 hover:bg-white/10 rounded-full"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <X className="w-6 h-6 text-white" />
+            </motion.button>
+
             <motion.div
               className="text-center space-y-8"
               initial={{ opacity: 0, y: 50 }}
