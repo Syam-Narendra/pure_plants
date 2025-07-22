@@ -1,16 +1,36 @@
 import { useNavigate, useSearchParams } from "@remix-run/react";
-import { forwardRef } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
+
 const SearchBox = forwardRef<HTMLDivElement>((props, ref) => {
   const navigate = useNavigate();
   const [oldParams] = useSearchParams();
-  const searchValue = oldParams.get("query") as string
-  const updateSearch = (searchValue: string) => {
+  const initialSearch = oldParams.get("query") || "";
+  const [inputValue, setInputValue] = useState(initialSearch);
+
+  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const updateSearch = useCallback((searchValue: string) => {
     const searchParams = new URLSearchParams(location.search);
-    searchParams.set("query", searchValue);
+    if (searchValue) {
+      searchParams.set("query", searchValue);
+    } else {
+      searchParams.delete("query");
+    }
+
     navigate(`/products?${searchParams.toString()}`, {
       replace: true,
     });
-  };
+  }, [navigate]);
+
+  useEffect(() => {
+    if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
+
+    debounceTimeout.current = setTimeout(() => {
+      if (inputValue !== initialSearch) {
+        updateSearch(inputValue);
+      }
+    }, 300); // adjust debounce delay here
+  }, [inputValue, updateSearch, initialSearch]);
 
   return (
     <div ref={ref} className="sticky bg-black shadow-md">
@@ -19,8 +39,8 @@ const SearchBox = forwardRef<HTMLDivElement>((props, ref) => {
         <input
           type="text"
           placeholder="Search catalogue..."
-          value={searchValue}
-          onChange={(e) => updateSearch(e.target.value)}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
           className="px-4 py-2 rounded-xl border bg-black text-white focus:outline-none focus:ring-2 focus:ring-green-400 w-full sm:w-80"
         />
       </div>
