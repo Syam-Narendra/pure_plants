@@ -3,8 +3,7 @@ import { businessName } from "~/data/text.en";
 
 export default function ContactCard() {
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col-reverse md:flex-row">
-      {/* Image Section (Bottom on mobile, right on desktop) */}
+    <div className="max-w-4xl mx-auto bg-[#F9F9F9] rounded-2xl shadow-xl overflow-hidden flex flex-col-reverse md:flex-row">
       <div className="w-full md:w-1/2">
         <img
           src="/leaves.jpg"
@@ -13,9 +12,7 @@ export default function ContactCard() {
         />
       </div>
 
-      {/* Contact Info Section (Top on mobile, left on desktop) */}
       <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
-        {/* Logo & Business Name */}
         <div className="text-center mb-6">
           <div className="flex justify-center mb-3">
             <svg
@@ -41,7 +38,6 @@ export default function ContactCard() {
           </h1>
         </div>
 
-        {/* Contact Title */}
         <div className="text-center mb-6">
           <h2 className="text-2xl font-light text-gray-700 mb-2">
             Contact <em className="font-serif">Us</em>
@@ -49,7 +45,6 @@ export default function ContactCard() {
           <div className="w-16 h-1 bg-green-500 mx-auto rounded" />
         </div>
 
-        {/* Contact Items */}
         <div className="space-y-5 text-sm text-gray-700">
           {[
             { icon: <Phone className="w-4 h-4 text-white" />, label: "123-456-7890" },
