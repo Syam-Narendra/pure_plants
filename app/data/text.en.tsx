@@ -302,7 +302,7 @@ export const FooterLinks: FooterLinksI[] = [
   {
     heading: "Company",
     subLinks: [
-      { linkName: "Contact", href: "/contact" },
+      { linkName: "Contact", href: "/contact-us" },
       { linkName: "Blog", href: "#" },
       { linkName: "FAQ", href: "#" },
     ],

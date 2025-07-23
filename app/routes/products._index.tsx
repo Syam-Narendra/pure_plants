@@ -26,7 +26,7 @@ export const loader: LoaderFunction = async ({
     const sizeMatched =
       sizeParams.length === 0 ||
       sizeParams.some((size) => product.sizesAvailable.includes(size as Size));
-    const queryMatched = product.plantName
+    const queryMatched = !queryParams || product.plantName
       .toLocaleLowerCase()
       .includes(queryParams as string);
 
