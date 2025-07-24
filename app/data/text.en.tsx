@@ -1,4 +1,13 @@
-import { Instagram, Linkedin, Music, X, Youtube } from "lucide-react";
+import {
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Music,
+  Phone,
+  X,
+  Youtube
+} from "lucide-react";
 import { JSX } from "react";
 
 export const backGroundSlideImages: string[] = [
@@ -456,4 +465,20 @@ export const AllProductsImages: AllProductsImagesI[] = [
     category: categoriesObj.indoorPlants,
     sizesAvailable: [Size.s15_16, Size.s20_20],
   },
+];
+
+export const contactUs: { icon: JSX.Element; label: string }[] = [
+  { icon: <Phone className="w-4 h-4 text-white" />, label: "+91 9963989127 \n +91 9963404877" },
+  {
+    icon: <Mail className="w-4 h-4 text-white" />,
+    label: "pure-plants@gmail.com",
+  },
+  {
+    icon: <MapPin className="w-4 h-4 text-white" />,
+    label: "Madiki, Near Kadiyapulanka, East Godavari Dist, Andhra Pradesh",
+  },
+  // {
+  //   icon: <Globe className="w-4 h-4 text-white" />,
+  //   label: "www.reallygreatsite.com",
+  // },
 ];
