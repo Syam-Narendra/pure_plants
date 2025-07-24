@@ -1,6 +1,6 @@
 import { InfiniteSlider } from "~/components/TrustedSection/infinite-slider";
 import { ProgressiveBlur } from "~/components/TrustedSection/progressive-blur";
-import { companyScrollLogos } from "~/data/text.en";
+import { verticalScrollSlider } from "~/data/text.en";
 
 export function CompainesSlider() {
   return (
@@ -10,20 +10,16 @@ export function CompainesSlider() {
           <div className="group relative m-auto max-w-7xl px-4 sm:px-6 overflow-hidden">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">Powering the best teams</p>
+                <span className=" text-indigo-200">We Stand For{"  "}</span>
               </div>
 
               <div className="relative py-6 md:w-[calc(100%-11rem)] w-full overflow-hidden">
                 <InfiniteSlider durationOnHover={20} duration={35} gap={112}>
-                  {companyScrollLogos.map((logoInfo, index) => (
+                  {verticalScrollSlider.map((info, index) => (
                     <div key={index.toString()} className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert"
-                        src={logoInfo.src}
-                        alt={logoInfo.alt}
-                        height="20"
-                        width="auto"
-                      />
+                      <h1 className="font-satoshi text-[25px] font-bold text-white">
+                        {info.name}
+                      </h1>
                     </div>
                   ))}
                 </InfiniteSlider>

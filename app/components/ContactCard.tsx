@@ -102,7 +102,7 @@ const LeafSVG = () => (
 
 export default function ContactCard() {
   return (
-    <div className="max-w-4xl mx-auto bg-[#F9F9F9] rounded-2xl shadow-xl overflow-hidden flex flex-col-reverse md:flex-row">
+    <div className="max-w-4xl mx-auto bg-[#F9F9F9] rounded-2xl shadow-xl overflow-hidden flex flex-col-reverse md:flex-row m-5">
       <div className="w-full md:w-1/2">
         <img
           src="/leaves.jpg"
@@ -134,7 +134,7 @@ export default function ContactCard() {
               <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
                 {item.icon}
               </div>
-              <span style={{whiteSpace:"pre-line"}}>{item.label}</span>
+              <span style={{ whiteSpace: "pre-line" }}>{item.label}</span>
             </div>
           ))}
         </div>

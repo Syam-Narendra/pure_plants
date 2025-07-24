@@ -1,3 +1,4 @@
+import { useLocation } from "@remix-run/react";
 import {
   businessIntro,
   businessName,
@@ -7,6 +8,9 @@ import {
 } from "~/data/text.en";
 
 export default function Footer() {
+  const location = useLocation();
+  const catParams: string[] =
+    new URLSearchParams(location.search).get("cat")?.split(",") || [];
   return (
     <footer className="bg-black text-white py-12 px-4 md:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
@@ -47,7 +51,12 @@ export default function Footer() {
                     <li key={index}>
                       <a
                         href={subLink.href}
-                        className="text-gray-400 hover:text-white transition-colors duration-200"
+                        className={`${
+                          catParams.includes(subLink.linkName) ||
+                          location.pathname === subLink.href
+                            ? "text-white"
+                            : "text-gray-400"
+                        } hover:text-white transition-colors duration-200`}
                       >
                         {subLink.linkName}
                       </a>

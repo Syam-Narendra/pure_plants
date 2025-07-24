@@ -1,3 +1,4 @@
+import { MetaFunction } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
 import Footer from "~/components/Footer";
@@ -5,6 +6,12 @@ import { NavBar } from "~/components/Navbar";
 import FilterBox from "~/components/Products/FilterBox";
 import SearchBox from "~/components/Products/SearchBox";
 
+export const meta: MetaFunction = ({ location }) => {
+  const catParams =
+    new URLSearchParams(location.search).get("cat")?.split(",")[0] || "Catalogue"
+
+  return [{ title: catParams }];
+};
 const ProductsPage = () => {
   const [searchBoxHeight, setSearchBoxHeight] = useState(0);
   const searchBoxRef = useRef<HTMLDivElement>(null);

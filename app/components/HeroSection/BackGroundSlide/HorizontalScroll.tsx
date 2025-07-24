@@ -1,12 +1,12 @@
-import { ScrollVelocity } from "~/components/HeroSection/BackGroundSlide/scroll-velocity"
-import { backGroundSlideImages} from "~/data/text.en";
+import { ScrollVelocity } from "~/components/HeroSection/BackGroundSlide/scroll-velocity";
+import { backGroundSlideImages } from "~/data/text.en";
 
-const velocity = [3, -3]
+const velocity = [3, -3];
 
 function ScrollVelocityBg() {
   return (
-    <div className="w-full">
-      <div className="flex flex-col space-y-5 py-10">
+    <div className="w-full h-full flex items-center justify-center ">
+      <div className="flex flex-col justify-center items-center gap-5">
         {velocity.map((v, index) => (
           <ScrollVelocity key={index} velocity={v}>
             {backGroundSlideImages.map((src, index) => (
@@ -17,17 +17,15 @@ function ScrollVelocityBg() {
                 <img
                   src={src}
                   alt={index.toString()}
-                  
                   className="h-full w-full object-cover object-center"
                 />
               </div>
             ))}
           </ScrollVelocity>
         ))}
-        
       </div>
     </div>
-  )
+  );
 }
 
-export { ScrollVelocityBg }
+export { ScrollVelocityBg };

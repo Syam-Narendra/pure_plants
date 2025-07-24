@@ -1,6 +1,8 @@
+import { MetaFunction } from "@remix-run/node";
 import ContactCard from "~/components/ContactCard";
 import Footer from "~/components/Footer";
 import { NavBar } from "~/components/Navbar";
+export const meta: MetaFunction = () => [{ title: "Contact Us" }];
 
 export default function Index() {
   return (
@@ -10,6 +12,7 @@ export default function Index() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Get in touch with our team</h1>
         </div>
+        <ContactCard />
         <ContactCard />
       </div>
       <Footer />

@@ -6,7 +6,7 @@ import {
   Music,
   Phone,
   X,
-  Youtube
+  Youtube,
 } from "lucide-react";
 import { JSX } from "react";
 
@@ -63,143 +63,29 @@ interface iconsinFooterI {
   ariaLabel: string;
   iconComponent: JSX.Element;
 }
-interface verticalScrollImagesI {
-  className: string;
-  images: {
-    src: string;
-    alt: string;
-    imgClassName: string;
-  }[];
-}
-export const verticalScrollImages: verticalScrollImagesI[] = [
-  {
-    className: "grid gap-2 col-span-4",
-    images: [
-      {
-        src: "https://images.unsplash.com/photo-1718838541476-d04e71caa347?w=500&auto=format&fit=crop",
-        alt: "Sunlight through dense forest canopy",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1715432362539-6ab2ab480db2?w=500&auto=format&fit=crop",
-        alt: "Blooming lavender field at sunset",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=500&auto=format&fit=crop",
-        alt: "Lush green tropical leaves close-up",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=500&auto=format&fit=crop",
-        alt: "Misty mountain valley covered with pine trees",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1719411182379-ffd97c1f7ebf?w=500&auto=format&fit=crop",
-        alt: "Wildflowers blooming on a hillside",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-    ],
-  },
-  {
-    className:
-      "sticky top-0 h-screen w-full col-span-4 gap-2  grid grid-rows-3",
-    images: [
-      {
-        src: "https://images.unsplash.com/photo-1718969604981-de826f44ce15?w=500&auto=format&fit=crop",
-        alt: "Dew on green foliage in morning light",
-        imgClassName:
-          "transition-all duration-300 w-full h-full align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1476180814856-a36609db0493?w=500&auto=format&fit=crop",
-        alt: "Path through dense forest trees",
-        imgClassName:
-          "transition-all duration-300 w-full h-full align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1595407660626-db35dcd16609?w=500&auto=format&fit=crop",
-        alt: "Close-up of succulent plant leaves",
-        imgClassName:
-          "transition-all duration-300 w-full h-full align-bottom object-cover rounded-md",
-      },
-    ],
-  },
-  {
-    className: "grid gap-2 col-span-4",
-    images: [
-      {
-        src: "https://images.unsplash.com/photo-1719547907790-f661a88302c2?w=500&auto=format&fit=crop",
-        alt: "Vibrant tropical plant with red-tinted leaves",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1599054799131-4b09c73a63cf?w=500&auto=format&fit=crop",
-        alt: "Potted plants arranged in a greenhouse",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1719963532023-01b573d1d584?w=500&auto=format&fit=crop",
-        alt: "Fresh green leaves with sunlight peeking through",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1714328101501-3594de6cb80f?w=500&auto=format&fit=crop",
-        alt: "Landscape view of a serene garden with trimmed shrubs",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1719554873571-0fd6bf322bb1?w=500&auto=format&fit=crop",
-        alt: "Young saplings growing in nursery rows",
-        imgClassName:
-          "transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md",
-      },
-    ],
-  },
-];
 
-export const companyScrollLogos: { src: string; alt: string }[] = [
+
+export const verticalScrollSlider: { name: string }[] = [
   {
-    src: "https://html.tailus.io/blocks/customers/nvidia.svg",
-    alt: "Nvidia Logo",
+    name: "Quality",
   },
   {
-    src: "https://html.tailus.io/blocks/customers/column.svg",
-    alt: "Column Logo",
+    name: "Variety",
   },
   {
-    src: "https://html.tailus.io/blocks/customers/github.svg",
-    alt: "GitHub Logo",
+    name: "Trust",
   },
   {
-    src: "https://html.tailus.io/blocks/customers/nike.svg",
-    alt: "Nike Logo",
+    name: "Service",
   },
   {
-    src: "https://html.tailus.io/blocks/customers/lemonsqueezy.svg",
-    alt: "Lemon Squeezy Logo",
+    name: "Consistency",
   },
   {
-    src: "https://html.tailus.io/blocks/customers/laravel.svg",
-    alt: "Laravel Logo",
+    name: "Commitment",
   },
   {
-    src: "https://html.tailus.io/blocks/customers/lilly.svg",
-    alt: "Lilly Logo",
-  },
-  {
-    src: "https://html.tailus.io/blocks/customers/openai.svg",
-    alt: "OpenAI Logo",
+    name: "Sustainability",
   },
 ];
 
@@ -468,7 +354,10 @@ export const AllProductsImages: AllProductsImagesI[] = [
 ];
 
 export const contactUs: { icon: JSX.Element; label: string }[] = [
-  { icon: <Phone className="w-4 h-4 text-white" />, label: "+91 9963989127 \n +91 9963404877" },
+  {
+    icon: <Phone className="w-4 h-4 text-white" />,
+    label: "+91 9963989127 \n +91 9963404877",
+  },
   {
     icon: <Mail className="w-4 h-4 text-white" />,
     label: "pure-plants@gmail.com",

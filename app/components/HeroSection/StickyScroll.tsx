@@ -2,8 +2,8 @@ import { ReactLenis } from "lenis/react";
 import {
   heroStickyCardHeading,
   heroStickyCardText,
-  verticalScrollImages
 } from "~/data/text.en";
+import { verticalScrollImages } from "./images/verticalImages";
 
 const VerticalScroll = () => {
   return (
@@ -23,7 +23,8 @@ const VerticalScroll = () => {
 
         <section className="text-white w-full bg-slate-950">
           <div className="grid grid-cols-12 gap-2">
-            {verticalScrollImages.map((verticalGrids, index) => (
+            {verticalScrollImages.map((verticalGrids, index) => 
+            (
               <div key={index.toString()} className={verticalGrids.className}>
                 {verticalGrids.images.map((each, index) => (
                   <figure key={index.toString()} className="w-full h-full">
