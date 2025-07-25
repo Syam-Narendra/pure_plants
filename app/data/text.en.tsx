@@ -55,7 +55,7 @@ export const menuItems: IMenuItem[] = [
   { label: "HOME", href: "/" },
   { label: "ABOUT", href: "/about" },
   { label: "PRODUCTS", href: "/products" },
-  { label: "CONTACT", href: "/contact" },
+  { label: "CONTACT", href: "/contact-us" },
 ];
 
 interface iconsinFooterI {

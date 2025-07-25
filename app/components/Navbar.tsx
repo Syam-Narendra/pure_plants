@@ -75,7 +75,6 @@ export const NavBar = ({ isHome }: NavBarProps) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {/* X button inside the overlay */}
             <motion.button
               onClick={toggleMenu}
               className="absolute top-6 left-6 z-50 p-2 hover:bg-white/10 rounded-full"
