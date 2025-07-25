@@ -10,7 +10,6 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Input } from "~/components/ui/input";
 import { businessName, categories } from "~/data/text.en";
-import "./search-box.css"
 export default function SearchBox() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -54,7 +53,7 @@ export default function SearchBox() {
       <div className="bg-black px-4 py-2">
         <div className="flex items-center gap-2 max-w-7xl mx-auto">
           <DropdownMenu>
-            <DropdownMenuTrigger asChild className="w-52 no-margin">
+            <DropdownMenuTrigger asChild className="w-52">
               <Button
                 variant="outline"
                 className="bg-black text-gray-200 border-gray-600 rounded-l-md rounded-r-none min-w-[60px] justify-between"
