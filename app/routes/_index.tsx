@@ -11,10 +11,7 @@ import { businessName } from "~/data/text.en";
 
 export const meta: MetaFunction = () => [
   {
-    title: businessName
-      .split(" ")
-      .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
-      .join(" "),
+    title: businessName,
   },
 ];
 

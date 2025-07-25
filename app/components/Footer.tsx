@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold tracking-wider">
-                {businessName}
+                {businessName.toUpperCase()}
               </h2>
             </div>
 

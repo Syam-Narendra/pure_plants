@@ -117,7 +117,7 @@ export default function ContactCard() {
             <LeafSVG />
           </div>
           <h1 className="text-2xl font-light text-green-700 tracking-wide">
-            {businessName}
+            {businessName.toUpperCase()}
           </h1>
         </div>
 

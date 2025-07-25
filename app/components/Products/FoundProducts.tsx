@@ -50,7 +50,7 @@ const ProductsFound = ({
   }, []);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 p-5">
       {products.map((item, index) => (
         <div
           key={index}

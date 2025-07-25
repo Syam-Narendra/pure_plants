@@ -42,7 +42,7 @@ export const homePageImages: string[] = [
 ];
 export const heading: string = "NATURE’S COLLECTION";
 export const tagLine: string = "A Curated Selection of Lush, Living Plants";
-export const businessName: string = "PURE PLANTS";
+export const businessName: string = "Pure Plants";
 export const videoUrl: string =
   "https://video-previews.elements.envatousercontent.com/h264-video-previews/34b4f82d-339a-4c07-ba47-e8a87ded3de1/2733283.mp4";
 
@@ -117,8 +117,8 @@ export const iconsinFooter: iconsinFooterI[] = [
   },
 ];
 
-export const businessIntro: string = `Welcome to ${businessName}, your green haven. Explore a lush variety of plants, elevate your garden space, and connect with nature. Contact us today for quotes`;
-export const copyRightText: string = `© 2024 ${businessName}. All rights reserved`;
+export const businessIntro: string = `Welcome to ${businessName.toUpperCase()}, your green haven. Explore a lush variety of plants, elevate your garden space, and connect with nature. Contact us today for quotes`;
+export const copyRightText: string = `© 2024 ${businessName.toUpperCase()}. All rights reserved`;
 export const heroStickyCardHeading: string = `Discover vibrant greenery`;
 export const heroStickyCardText: string = `curated with care to bring life, peace, and style to your home and garden`;
 
